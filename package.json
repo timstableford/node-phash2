@@ -6,6 +6,7 @@
   "author": "Tim Stableford",
   "license": "MIT",
   "gypfile": true,
+  "repository": "https://github.com/timstableford/node-phash2",
   "types": "types/index.d.ts",
   "scripts": {
     "build": "node-gyp rebuild",
