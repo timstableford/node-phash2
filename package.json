@@ -10,13 +10,23 @@
   "scripts": {
     "build": "node-gyp rebuild",
     "clean": "node-gyp clean",
-    "fix": "./format.sh && eslint --fix *.js"
+    "fix": "./format.sh && eslint --fix *.js",
+    "install": "node-gyp configure && node-gyp build"
   },
+  "files": [
+    "index.js",
+    "test.js",
+    "package.json",
+    "binding.gyp",
+    "yarn.lock",
+    "src/*",
+    "types/*"
+  ],
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "node-gyp": "^6.0.0"
+    "eslint": "^6.5.1"
   },
   "dependencies": {
-    "node-addon-api": "^1.7.1"
+    "node-addon-api": "^1.7.1",
+    "node-gyp": "^6.0.0"
   }
 }

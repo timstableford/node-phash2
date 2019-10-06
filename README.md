@@ -6,6 +6,24 @@ Supported:
 * Images (DCT and MH hashses, and respective hamming distance calculators)
 * Video (DCT hashing and distance calculator). Note that this segfaults in pHash. Possibly due to deprecated ffmpeg code.
 
+## Usage
+
+For API documentation please see [types/index.d.ts](types/index.d.ts).
+
+Also see [test.js](./test.js) for an example usage.
+
+### TypeScript
+```
+import pHash from 'phash2';
+console.log(pHash.info());
+```
+
+### NodeJS
+```
+const pHash = require('phash2');
+console.log(pHash.info());
+```
+
 ## Installing pHash
 See the Dockerfiles under dev for Alpine and Ubuntu setup.
 
