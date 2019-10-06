@@ -2,6 +2,7 @@
 #include <pHash.h>
 
 #include "image-hash.h"
+#include "video-hash.h"
 
 Napi::String AboutWrapped(const Napi::CallbackInfo &info) {
     Napi::Env env = info.Env();
@@ -42,6 +43,7 @@ Napi::Object InitAll(Napi::Env env, Napi::Object exports) {
     exports.Set("isAudioSupported", Napi::Function::New(env, IsAudioSupported));
 
     ImageHash::Init(env, exports);
+    VideoHash::Init(env, exports);
 
     return exports;
 }

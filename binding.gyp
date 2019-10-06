@@ -6,8 +6,7 @@
         "cflags": [ "-fexceptions" ],
         "cflags_cc": [ "-fexceptions" ],
         "sources": [
-            "src/main.cpp",
-            "src/image-hash.cpp"
+            "src/main.cpp"
         ],
         "include_dirs": [
             "<!@(node -p \"require('node-addon-api').include\")"

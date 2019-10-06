@@ -1,6 +1,8 @@
 *.js
 *.jpg
 *.jpeg
+*.flv
+*.mp4
 node_modules/*
 package-lock.json
 build/*
