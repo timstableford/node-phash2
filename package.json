@@ -1,5 +1,5 @@
 {
-  "name": "node-phash",
+  "name": "node-phash2",
   "version": "1.0.0",
   "description": "node wrapper for pHash",
   "main": "index.js",
