@@ -66,11 +66,15 @@ class MHImageHash : public Napi::AsyncWorker {
     ~MHImageHash() {}
 
     void Execute() {
-        int hashLength;
-        this->hash = ph_mh_imagehash(this->path.c_str(), hashLength,
-                                     this->alpha, this->level);
-        if (this->hash == nullptr || hashLength != MH_HASH_LENGTH) {
-            SetError("Failed to calculate image hash");
+        try {
+            int hashLength;
+            this->hash = ph_mh_imagehash(this->path.c_str(), hashLength,
+                                         this->alpha, this->level);
+            if (this->hash == nullptr || hashLength != MH_HASH_LENGTH) {
+                SetError("Failed to calculate image hash");
+            }
+        } catch (const std::exception &e) {
+            SetError(e.what());
         }
     }
 
