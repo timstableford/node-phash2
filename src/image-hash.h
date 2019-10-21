@@ -17,9 +17,13 @@ class DCTImageHash : public Napi::AsyncWorker {
     ~DCTImageHash() {}
 
     void Execute() {
-        int retVal = ph_dct_imagehash(this->path.c_str(), this->hash);
-        if (retVal != 0) {
-            SetError("Failed to calculate image hash");
+        try {
+            int retVal = ph_dct_imagehash(this->path.c_str(), this->hash);
+            if (retVal != 0) {
+                SetError("Failed to calculate image hash");
+            }
+        } catch (const std::exception &e) {
+            SetError(e.what());
         }
     }
 

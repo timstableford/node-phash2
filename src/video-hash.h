@@ -16,12 +16,16 @@ class DCTVideoHash : public Napi::AsyncWorker {
     ~DCTVideoHash() {}
 
     void Execute() {
-        this->hash = ph_dct_videohash(this->path.c_str(), this->hashLength);
-        if (this->hash == nullptr || this->hashLength == 0) {
-            if (this->hash != nullptr) {
-                free(this->hash);
+        try {
+            this->hash = ph_dct_videohash(this->path.c_str(), this->hashLength);
+            if (this->hash == nullptr || this->hashLength == 0) {
+                if (this->hash != nullptr) {
+                    free(this->hash);
+                }
+                SetError("Failed to calculate image hash");
             }
-            SetError("Failed to calculate image hash");
+        } catch (const std::exception &e) {
+            SetError(e.what());
         }
     }
 

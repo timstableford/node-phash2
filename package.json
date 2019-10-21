@@ -1,6 +1,6 @@
 {
   "name": "phash2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node wrapper for pHash",
   "main": "index.js",
   "author": "Tim Stableford",
