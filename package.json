@@ -1,13 +1,20 @@
 {
   "name": "phash2",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "node wrapper for pHash",
   "main": "index.js",
   "author": "Tim Stableford",
   "license": "MIT",
   "gypfile": true,
   "repository": "https://github.com/timstableford/node-phash2",
-  "keywords": [ "phash", "perceptual", "hash", "bindings", "n-api", "native" ],
+  "keywords": [
+    "phash",
+    "perceptual",
+    "hash",
+    "bindings",
+    "n-api",
+    "native"
+  ],
   "types": "types/index.d.ts",
   "scripts": {
     "build": "node-gyp rebuild",
@@ -25,10 +32,10 @@
     "types/*"
   ],
   "devDependencies": {
-    "eslint": "^6.5.1"
+    "eslint": "^7.29.0"
   },
   "dependencies": {
-    "node-addon-api": "^1.7.1",
-    "node-gyp": "^6.0.0"
+    "node-addon-api": "^4.0.0",
+    "node-gyp": "^8.1.0"
   }
 }
